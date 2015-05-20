@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController<CLLocationManagerDelegate>
+{
+    CLLocationManager *locationManager;// 位置管理器
+    CLGeocoder *geoCoder ;// 地理位置和真实地址转换
+}
+@property(strong, nonatomic) NSString *address;
 
 @end
 
