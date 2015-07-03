@@ -7,17 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface mapViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
+#import <MAMapKit/MAMapKit.h>
+
+@interface mapViewController : UIViewController<MAMapViewDelegate>
 {
-    MKMapView *map;
-    CLLocationManager *locationManager;
+    MAMapView *_mapView;
     float slon;
     float slat;
     float elat;
     float elon;
     float lastAngle;
 }
+@property (nonatomic, strong) NSMutableArray *annotations;
+
 @end

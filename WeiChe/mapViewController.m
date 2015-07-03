@@ -11,12 +11,46 @@
 #import <math.h>
 
 @interface mapViewController ()
-
+{
+    MAPointAnnotation *pointAnnotation;
+}
 @end
 
 @implementation mapViewController
 
+@synthesize annotations = _annotations;
+
+#pragma mark - MAMapViewDelegate
+
+- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MAPointAnnotation class]])
+    {
+        static NSString *reuseIndetifier = @"annotationReuseIndetifier";
+        MAAnnotationView *annotationView = (MAAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseIndetifier];
+        
+        if (annotationView == nil)
+        {
+            
+            annotationView = [[MAAnnotationView alloc] initWithAnnotation:annotation
+                                                          reuseIdentifier:reuseIndetifier];
+        }
+        //double angle = [self LoctionAngle:0 startLon:0 endLat:1 endLon:1];
+       // NSLog(@"%f",angle);
+        //annotationView.transform = CGAffineTransformMakeRotation(angle);
+        annotationView.canShowCallout = YES;
+        annotationView.transform = CGAffineTransformRotate(annotationView.transform, M_PI/8.0);
+        annotationView.image = [UIImage imageNamed:@"mucar.png"];
+        annotationView.draggable = YES;
+        //设置中⼼心点偏移，使得标注底部中间点成为经纬度对应点
+        //annotationView.centerOffset = CGPointMake(0, -18);
+        return annotationView;
+    }
+    return nil;
+}
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
@@ -36,7 +70,7 @@
     
     [self.view addSubview:navigationBar];
 
-    map = [[MKMapView alloc] initWithFrame:CGRectMake(0, 65, 320, 568)];
+    /*map = [[MKMapView alloc] initWithFrame:CGRectMake(0, 65, 320, 568)];
     map.showsUserLocation = YES;
     map.mapType = MKMapTypeStandard;
     [self.view addSubview:map];
@@ -54,22 +88,56 @@
     }else{
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您的位置服务当前不可用，请打开位置服务后重试" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
-    }
-   slon = 0.0f;
+    }*/
+    [MAMapServices sharedServices].apiKey = @"93f19ee3f3184d7d1180ecb87be8c134";
+    
+    _mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 65, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-65)];
+    _mapView.delegate = self;
+   // _mapView.showsUserLocation = YES;
+    //_mapView.userTrackingMode = MAUserTrackingModeFollow;
+    [_mapView setZoomLevel:16.1 animated:YES];
+   
+    [self.view addSubview:_mapView];
+    slon = 0.0f;
     slat = 0.0f;
     lastAngle = 0.0f;
     //[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(locationPoint) userInfo:nil repeats:YES];
+    pointAnnotation = [[MAPointAnnotation alloc] init];
+    pointAnnotation.coordinate = CLLocationCoordinate2DMake(23.098155, 113.347285);
+     [_mapView setCenterCoordinate:CLLocationCoordinate2DMake(23.098155, 113.347285) animated:YES];
+    pointAnnotation.title = @"我的爱车";
+    
+    [_mapView addAnnotation:pointAnnotation];
+}
+-(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation
+updatingLocation:(BOOL)updatingLocation
+{
+    if(updatingLocation)
+    {
+        //取出当前位置的坐标
+        //[mapView removeAnnotation:pointAnnotation];
+       
+        NSLog(@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+        
+        pointAnnotation = [[MAPointAnnotation alloc] init];
+        pointAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
+        pointAnnotation.title = @"我的爱车";
+        //pointAnnotation.subtitle = @"阜通东大街6号";
+        
+        
+        [_mapView addAnnotation:pointAnnotation];
+    }
 }
 -(void)back
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
--(void)locationPoint
+/*-(void)locationPoint
 {
     //获取从服务器得到的汽车经纬度数据
 
-    elat = 23.397933;
-    elon = 113.255178;
+    elat = 23.100578;
+    elon = 113.341761;
     if ((elon != 0.0f)&&(elat != 0.0f)) {
         [map removeOverlays:map.overlays];
         [map removeAnnotations:map.annotations];//移除地图上的大头针
@@ -80,8 +148,8 @@
         map.delegate = self;
         [self createAnnotationWithCoords:coords];//将新的位置添加到地图上
     }
-}
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+}*/
+/*-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     //NSLog(@"Latitude=%f",newLocation.coordinate.latitude);
     //NSLog(@"Longitude=%f",newLocation.coordinate.longitude);
@@ -90,7 +158,7 @@
     [map removeOverlays:map.overlays];
     [map removeAnnotations:map.annotations];//移除地图上的大头针
     CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(elat,elon);
-    float zoomLevel = 0.02;
+    float zoomLevel = 0.01;
     MKCoordinateRegion region = MKCoordinateRegionMake(coords, MKCoordinateSpanMake(zoomLevel, zoomLevel));
     [map setRegion:[map regionThatFits:region] animated:YES];
     map.delegate = self;
@@ -116,7 +184,7 @@
     annotation.title = @"爱车位置";
     [map addAnnotation:annotation];
 }
-
+*/
 //计算大头针偏移角度
 -(double)LoctionAngle:(float)startlat startLon:(float)startlon endLat:(float)endlat endLon:(float)endlon
 {
@@ -145,5 +213,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end

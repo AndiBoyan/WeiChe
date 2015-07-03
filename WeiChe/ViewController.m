@@ -12,6 +12,7 @@
 #import "mapViewController.h"
 #import "loadViewController.h"
 #import "safeViewController.h"
+#import <LocalAuthentication/LAContext.h>
 
 @interface ViewController ()
 {
@@ -96,8 +97,8 @@
     lab4.font = [UIFont systemFontOfSize:14.0f];
     lab4.textColor = [UIColor whiteColor];
     [self.view addSubview:lab4];
-   
 }
+
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     //NSLog(@"Latitude=%f",newLocation.coordinate.latitude);
@@ -139,7 +140,25 @@
 //不规则按钮响应事件
 -(void)obsapedButtonAction:(id)sender
 {
-
+    /*LAContext *myContext = [[LAContext alloc] init];
+    NSError *authError = nil;
+    NSString *myLocalizedReasonString = @"请输入指纹";
+    if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {
+        [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
+                  localizedReason:myLocalizedReasonString
+                            reply:^(BOOL success, NSError *error) {
+                                if (success) {
+                                    // User authenticated successfully, take appropriate action
+                                    NSLog(@"1");
+                                } else {
+                                    // User did not authenticate successfully, look at error and take appropriate action
+                                    NSLog(@"2");
+                                }
+                            }];
+    } else {
+        // Could not evaluate policy; look at authError and present an appropriate message to user
+        NSLog(@"3");
+    }*/
     OBShapedButton *button = (OBShapedButton*)sender;
     switch (button.tag) {
         case 1000:

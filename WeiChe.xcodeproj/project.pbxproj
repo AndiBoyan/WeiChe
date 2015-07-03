@@ -73,7 +73,6 @@
 		304D24191B05B17200A1CF06 /* con_openbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D24101B05B17200A1CF06 /* con_openbox@2x.png */; };
 		304D241A1B05B17200A1CF06 /* con_unlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D24111B05B17200A1CF06 /* con_unlock@2x.png */; };
 		304D241B1B05B17200A1CF06 /* fragment_con_bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D24121B05B17200A1CF06 /* fragment_con_bg2.png */; };
-		304D241D1B05B36100A1CF06 /* mucar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D241C1B05B36100A1CF06 /* mucar@3x.png */; };
 		304D242B1B05BAC300A1CF06 /* dazhong.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D241F1B05BAC300A1CF06 /* dazhong.png */; };
 		304D242C1B05BAC300A1CF06 /* location_icon_average_fuel.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D24201B05BAC300A1CF06 /* location_icon_average_fuel.png */; };
 		304D242D1B05BAC300A1CF06 /* location_icon_driving_mileage.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D24211B05BAC300A1CF06 /* location_icon_driving_mileage.png */; };
@@ -98,6 +97,11 @@
 		304D244B1B05CD0500A1CF06 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D24481B05CD0500A1CF06 /* map.png */; };
 		304D244C1B05CD0500A1CF06 /* wearth.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D24491B05CD0500A1CF06 /* wearth.png */; };
 		304D244E1B05D19200A1CF06 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = 304D244D1B05D19200A1CF06 /* load.png */; };
+		30770ECE1B0D9C210085F4D1 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30770ECD1B0D9C210085F4D1 /* LocalAuthentication.framework */; };
+		309522FE1B14215400F695AD /* mucar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309522FD1B14215400F695AD /* mucar@2x.png */; };
+		30B066C41B0F06450087049F /* CSqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B066C21B0F06450087049F /* CSqlite.m */; };
+		30B066C51B0F06450087049F /* gps.db in Resources */ = {isa = PBXBuildFile; fileRef = 30B066C31B0F06450087049F /* gps.db */; };
+		30B066C91B0F07A50087049F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B066C81B0F07A50087049F /* libsqlite3.dylib */; };
 		30E5CFC21B05E9D6000C48FB /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E5CFBE1B05E9D6000C48FB /* 1@2x.png */; };
 		30E5CFC31B05E9D6000C48FB /* 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E5CFBF1B05E9D6000C48FB /* 2@2x.png */; };
 		30E5CFC41B05E9D6000C48FB /* 3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E5CFC01B05E9D6000C48FB /* 3@2x.png */; };
@@ -228,7 +232,6 @@
 		304D24101B05B17200A1CF06 /* con_openbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "con_openbox@2x.png"; path = "image/carState/con_openbox@2x.png"; sourceTree = "<group>"; };
 		304D24111B05B17200A1CF06 /* con_unlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "con_unlock@2x.png"; path = "image/carState/con_unlock@2x.png"; sourceTree = "<group>"; };
 		304D24121B05B17200A1CF06 /* fragment_con_bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fragment_con_bg2.png; path = image/carState/fragment_con_bg2.png; sourceTree = "<group>"; };
-		304D241C1B05B36100A1CF06 /* mucar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mucar@3x.png"; path = "image/mucar@3x.png"; sourceTree = SOURCE_ROOT; };
 		304D241F1B05BAC300A1CF06 /* dazhong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dazhong.png; path = image/loadImage/dazhong.png; sourceTree = SOURCE_ROOT; };
 		304D24201B05BAC300A1CF06 /* location_icon_average_fuel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location_icon_average_fuel.png; path = image/loadImage/location_icon_average_fuel.png; sourceTree = SOURCE_ROOT; };
 		304D24211B05BAC300A1CF06 /* location_icon_driving_mileage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "location_icon_driving_mileage.png"; path = "image/loadImage/location_icon_driving_mileage.png"; sourceTree = SOURCE_ROOT; };
@@ -253,6 +256,14 @@
 		304D24481B05CD0500A1CF06 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = image/mainImage/map.png; sourceTree = "<group>"; };
 		304D24491B05CD0500A1CF06 /* wearth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wearth.png; path = image/mainImage/wearth.png; sourceTree = "<group>"; };
 		304D244D1B05D19200A1CF06 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = load.png; path = image/mainImage/load.png; sourceTree = "<group>"; };
+		30770ECD1B0D9C210085F4D1 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		309522FD1B14215400F695AD /* mucar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mucar@2x.png"; path = "image/mucar@2x.png"; sourceTree = SOURCE_ROOT; };
+		30B066C11B0F06450087049F /* CSqlite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSqlite.h; path = SDK/Sqlite/CSqlite.h; sourceTree = "<group>"; };
+		30B066C21B0F06450087049F /* CSqlite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSqlite.m; path = SDK/Sqlite/CSqlite.m; sourceTree = "<group>"; };
+		30B066C31B0F06450087049F /* gps.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = gps.db; path = SDK/Sqlite/gps.db; sourceTree = "<group>"; };
+		30B066C61B0F064F0087049F /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = SDK/Sqlite/sqlite3.h; sourceTree = "<group>"; };
+		30B066C81B0F07A50087049F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		30B066CA1B0F07B30087049F /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3ext.h; path = SDK/Sqlite/sqlite3ext.h; sourceTree = "<group>"; };
 		30E5CFBE1B05E9D6000C48FB /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1@2x.png"; path = "image/1@2x.png"; sourceTree = "<group>"; };
 		30E5CFBF1B05E9D6000C48FB /* 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "2@2x.png"; path = "image/2@2x.png"; sourceTree = "<group>"; };
 		30E5CFC01B05E9D6000C48FB /* 3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "3@2x.png"; path = "image/3@2x.png"; sourceTree = "<group>"; };
@@ -310,8 +321,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30E5D00E1B05F236000C48FB /* AMapSearchKit.framework in Frameworks */,
+				30B066C91B0F07A50087049F /* libsqlite3.dylib in Frameworks */,
 				30E5CFDB1B05F07E000C48FB /* Security.framework in Frameworks */,
+				30770ECE1B0D9C210085F4D1 /* LocalAuthentication.framework in Frameworks */,
+				30E5D00E1B05F236000C48FB /* AMapSearchKit.framework in Frameworks */,
 				30E5CFD91B05F079000C48FB /* libstdc++.6.0.9.dylib in Frameworks */,
 				30E5CFD71B05F071000C48FB /* libz.dylib in Frameworks */,
 				30E5CFD51B05F068000C48FB /* SystemConfiguration.framework in Frameworks */,
@@ -341,6 +354,13 @@
 		302E6A071B0477A00055951F = {
 			isa = PBXGroup;
 			children = (
+				30B066CA1B0F07B30087049F /* sqlite3ext.h */,
+				30B066C81B0F07A50087049F /* libsqlite3.dylib */,
+				30B066C61B0F064F0087049F /* sqlite3.h */,
+				30B066C11B0F06450087049F /* CSqlite.h */,
+				30B066C21B0F06450087049F /* CSqlite.m */,
+				30B066C31B0F06450087049F /* gps.db */,
+				30770ECD1B0D9C210085F4D1 /* LocalAuthentication.framework */,
 				30E5D00D1B05F236000C48FB /* AMapSearchKit.framework */,
 				30E5D00C1B05F133000C48FB /* GaodeSDK */,
 				30E5CFDA1B05F07D000C48FB /* Security.framework */,
@@ -387,7 +407,6 @@
 			isa = PBXGroup;
 			children = (
 				304D241E1B05BAB200A1CF06 /* loadimage */,
-				304D241C1B05B36100A1CF06 /* mucar@3x.png */,
 				302E6A171B0477A00055951F /* AppDelegate.h */,
 				302E6A181B0477A00055951F /* AppDelegate.m */,
 				302E6A1A1B0477A00055951F /* ViewController.h */,
@@ -544,6 +563,7 @@
 		304D241E1B05BAB200A1CF06 /* loadimage */ = {
 			isa = PBXGroup;
 			children = (
+				309522FD1B14215400F695AD /* mucar@2x.png */,
 				304D241F1B05BAC300A1CF06 /* dazhong.png */,
 				304D24201B05BAC300A1CF06 /* location_icon_average_fuel.png */,
 				304D24211B05BAC300A1CF06 /* location_icon_driving_mileage.png */,
@@ -683,6 +703,7 @@
 				304D24181B05B17200A1CF06 /* con_openbox.png in Resources */,
 				304D23EC1B0591A500A1CF06 /* carlight2.png in Resources */,
 				304D24081B05B0EF00A1CF06 /* progress_7@2x.png in Resources */,
+				309522FE1B14215400F695AD /* mucar@2x.png in Resources */,
 				304D23E91B0591A500A1CF06 /* carBasic.png in Resources */,
 				304D23F81B0591A500A1CF06 /* tailBoxOpen2.png in Resources */,
 				304D23EB1B0591A500A1CF06 /* carlight1.png in Resources */,
@@ -730,6 +751,7 @@
 				304D243C1B05BE8800A1CF06 /* 80.png in Resources */,
 				304D24031B05B0EF00A1CF06 /* progress_2@2x.png in Resources */,
 				304D241A1B05B17200A1CF06 /* con_unlock@2x.png in Resources */,
+				30B066C51B0F06450087049F /* gps.db in Resources */,
 				30E5CFC91B05F021000C48FB /* AMap.bundle in Resources */,
 				304D24191B05B17200A1CF06 /* con_openbox@2x.png in Resources */,
 				304D24461B05CC1900A1CF06 /* backguound.png in Resources */,
@@ -753,7 +775,6 @@
 				304D24321B05BAC300A1CF06 /* location_icon_start.png in Resources */,
 				304D24131B05B17200A1CF06 /* con_findcar.png in Resources */,
 				304D23EF1B0591A500A1CF06 /* carStateunLock.png in Resources */,
-				304D241D1B05B36100A1CF06 /* mucar@3x.png in Resources */,
 				304D24061B05B0EF00A1CF06 /* progress_5@2x.png in Resources */,
 				304D24091B05B0EF00A1CF06 /* progress_8@2x.png in Resources */,
 			);
@@ -775,6 +796,7 @@
 			files = (
 				302E6A7D1B0490CE0055951F /* CustomAnnotation.m in Sources */,
 				30E5D0071B05F11F000C48FB /* POIAnnotation.m in Sources */,
+				30B066C41B0F06450087049F /* CSqlite.m in Sources */,
 				30E5D0021B05F11F000C48FB /* LineDashPolyline.m in Sources */,
 				30E5D0031B05F11F000C48FB /* LocalTileOverlay.m in Sources */,
 				302E6A421B047A6F0055951F /* UIImage+ColorAtPixel.m in Sources */,
